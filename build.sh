@@ -1,1 +1,1 @@
-python3 src/main.py "/static_site_gen/"
+python3 src/main.py "/tolkien_fan_club_page/"
