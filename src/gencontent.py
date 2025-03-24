@@ -30,10 +30,8 @@ def generate_page(from_path, template_path, dest_path, basepath):
     title = extract_title(markdown_content)
     template = template.replace("{{ Title }}", title)
     template = template.replace("{{ Content }}", html)
-    print("Before replacement:", template)
-    template = template.replace('href="/', f'href="{basepath}/')
-    template = template.replace('src="/', f'src="{basepath}/')
-    print("After replacement:", template)
+    template = template.replace('href="/', 'href="' + basepath)
+    template = template.replace('src="/', 'src="' + basepath)
 
     dest_dir_path = os.path.dirname(dest_path)
     if dest_dir_path != "":
